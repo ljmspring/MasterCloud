@@ -1,0 +1,21 @@
+server:
+  port: 8002
+
+# ==========druid-mysql8 driver===================
+spring:
+  profiles:
+    # 多环境配置加载内容dev/prod,不写就是默认default配置
+    active:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud_study?characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    username: root
+    password: luo2828
+
+# ========================mybatis===================
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.zoro.cloud.entities
+  configuration:
+    map-underscore-to-camel-case: true
